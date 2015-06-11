@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  h1 Another Air Travel Calculator
+  form(action="" method="post")
+    label Departure City
+    p
+    select(name="departure_city")
+      option(value="0", disabled selected)= "Choose a city..."
+      option(value="chicago")= "Chicago"
+      option(value="newyork")= "New York"
+      option(value="losangelos")= "Los Angelos"
+    p  
+    label Arrival City
+    p
+      select(name="arrival_city")
+        option(value=0, disabled selected)= "Choose a city..."
+        option(value="chicago")= "Chicago"
+        option(value="newyork")= "New York"
+        option(value="losangelos")= "Los Angelos"
+    p
+    label Number of checked bags ($25/bag)
+    p
+      select(name="bags")
+        option(value="0")= "-1"
+        option(value="0" selected)= "0"
+        option(value="25")= "1"
+        option(value="50")= "2"
+        option(value="75")= "3"
+    p
+    label Class
+    p
+      select(name="class")
+        option(value="0" selected)= "Coach"
+        option(value="200")= "Business (+$200)"
+        option(value="500")= "First (+$500)"
+    p
+    input(type="checkbox" name="wifi")
+    label WiFi ($12)
+    p
+    label Discount Code
+    p
+    input(type="text" name="discount")
+    p
+    button(type="submit")= "Submit"
+    p
+    h2 Your price is: $ #{total}
