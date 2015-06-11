@@ -19,7 +19,7 @@ module.exports = function(departureCity, arrivalCity, bags, flightClass, wifi, d
     }
 
     if (price > 0) {
-      if (wifi === true) {
+      if (wifi === 'on') {
         wifiCost = 12
       } else {
         wifiCost = 0
